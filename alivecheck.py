@@ -2,7 +2,6 @@
 
 import os, sys, time, urllib2, smtplib
 
-script_name = 'alivecheck'
 smtp = 'localhost'
 sender = os.getlogin() + '@' + smtp
 admin_email = 'youremail@example.com'
@@ -40,7 +39,7 @@ def check(url, string_to_check):
 	log(url, status)
 
 def log(url, status):
-	logfile = script_name + '.log'
+	logfile =  'alivecheck.log'
 	log = open(logfile, 'a')
 	log.write(str(status) + ',' + url + ',' + str(int(time.time())) + os.linesep)
 	log.close()
